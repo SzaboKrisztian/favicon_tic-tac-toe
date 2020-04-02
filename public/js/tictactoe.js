@@ -22,7 +22,6 @@ window.onload = () => {
       const index = event.keyCode - 97;
       if (board[index] === 0) {
         board[index] = crossTurn ? 1 : 2;
-        console.log(board);
         turnComplete();
       }
     } else if (event.keyCode === 32 && gameStatus !== 0) {
@@ -88,8 +87,6 @@ window.onload = () => {
     let favicon = document.querySelector('link[rel="icon"]');
     let newIcon = favicon.cloneNode(true);
     newIcon.setAttribute('href', url);
-    console.log(favicon, newIcon);
-    document.querySelector("head").replaceChild(newIcon, favicon);
-    console.log(document.querySelector("head"));
+    document.head.replaceChild(newIcon, favicon);
   }
 }
